@@ -33,7 +33,7 @@ internal static class Quiz
                 break;
             case "Теоретический тест":
                 await Test.TeoreticalTest(client, sender, e);
-                break;
+                break; 
             default:
                 await client.SendTextMessageAsync(msg.Chat.Id, "Выберите команду: ", replyMarkup: Button.GetButtons());
                 break;
