@@ -28,12 +28,15 @@ internal static class Quiz
                     replyToMessageId: msg.MessageId,
                     replyMarkup: Button.GetButtons());
                 break;          
-            case "Достопримечательности":
+            case "Достопримечательность":
                 await RandomPhoto.RandowyzePhoto(client, sender, e);
                 break;
             case "Теоретический тест":
                 await Test.TeoreticalTest(client, sender, e);
-                break; 
+                break;
+            case "Интересные факты":
+                await Facts.intrestingFacts(client, sender, e);
+                break;
             default:
                 await client.SendTextMessageAsync(msg.Chat.Id, "Выберите команду: ", replyMarkup: Button.GetButtons());
                 break;
