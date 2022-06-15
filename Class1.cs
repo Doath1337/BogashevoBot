@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace testbot2
+namespace testbot2;
+
+internal static class attractions
 {
-    internal class Telega
+     public static async Task attract(TelegramBotClient client, object sender,MessegeIventArgs e)
     {
 
     }

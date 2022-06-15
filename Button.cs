@@ -15,7 +15,7 @@ internal static class Button
         {
             Keyboard = new List<List<KeyboardButton>>
             {
-                new List<KeyboardButton>{ new KeyboardButton { Text = "История Села"}, new KeyboardButton { Text = "Достопримечательности" } },
+                new List<KeyboardButton>{ new KeyboardButton { Text = "История Села"}, new KeyboardButton { Text = "Достопримечательность" } },
                 new List<KeyboardButton>{ new KeyboardButton { Text = "Интересные факты" }, new KeyboardButton { Text = "Теоретический тест"} }
             }
         };
