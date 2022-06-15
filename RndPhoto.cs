@@ -7,6 +7,7 @@ using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.InputFiles;
+using Telegram.Bot.Types.ReplyMarkups;
 namespace testbot2;
 
 internal static class RandomPhoto
@@ -51,5 +52,7 @@ internal static class RandomPhoto
                 break;
 
         }
+     
+        
     }
 }
