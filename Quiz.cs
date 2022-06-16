@@ -20,9 +20,11 @@ internal static class Quiz
            {
                 InlineKeyboardButton.WithCallbackData("Церковь", "Church"),
                 InlineKeyboardButton.WithCallbackData("Школа", "School"),
-                 InlineKeyboardButton.WithCallbackData("Железнодорожная станция", "RailwayStation")
+                 InlineKeyboardButton.WithCallbackData("Станция", "RailwayStation")
             });
+
         var msg = e.Message;
+    
         switch (msg.Text)
         {
             case "История Села":
@@ -34,31 +36,26 @@ internal static class Quiz
                    "    В честь заслуг С. М. Богашева разъезд 1 (Федосеевский) приказом Министра переименован в «Богашево».\n" + "https://st.weblancer.net/download/2506879_935xp.jpg",
                     replyToMessageId: msg.MessageId,
                     replyMarkup: Button.GetButtons());
-<<<<<<< HEAD
                 break;
             case "Достопримечательности":
-                client.SendTextMessageAsync(msg.Chat.Id, "Выберите Достопримечательность", replyMarkup:inlineKeyboard);
-=======
-                break;          
-            case "Достопримечательность":
-                await RandomPhoto.RandowyzePhoto(client, sender, e);
->>>>>>> b368663620006fd2badfc503c053e60f01c5b4db
+                client.SendTextMessageAsync(msg.Chat.Id, "Выберите Достопримечательность: ", replyMarkup:inlineKeyboard);
+                await RandomPhoto.RandowyzePhoto(client, sender, e, inlineKeyboard);
+                
                 break;
             case "Теоретический тест":
                 await Test.TeoreticalTest(client, sender, e);
                 break;
             case "Интересные факты":
-<<<<<<< HEAD
              
-=======
->>>>>>> b368663620006fd2badfc503c053e60f01c5b4db
                 await Facts.intrestingFacts(client, sender, e);
                 break;
             default:
                 await client.SendTextMessageAsync(msg.Chat.Id, "Выберите команду: ", replyMarkup: Button.GetButtons());
                 break;
         }
-       
+      
         return;
     }
+   
+
 }
