@@ -21,6 +21,7 @@ internal static class Quiz
                 InlineKeyboardButton.WithCallbackData("Церковь", "Church"),
                 InlineKeyboardButton.WithCallbackData("Школа", "School"),
                  InlineKeyboardButton.WithCallbackData("Станция", "RailwayStation")
+
             });
 
         var msg = e.Message;

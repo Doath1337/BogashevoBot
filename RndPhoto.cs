@@ -37,6 +37,7 @@ internal static class RandomPhoto
                     Message msg2 = await client.SendPhotoAsync(msg.Chat.Id, photoToBeSent);
 
                 }
+                client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup: inlineKeyboard);
             }
             else if (ev.CallbackQuery.Data == "RailwayStation")
             {
@@ -46,6 +47,7 @@ internal static class RandomPhoto
                     Message msg2 = await client.SendPhotoAsync(msg.Chat.Id, photoToBeSent);
 
                 }
+                client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup: inlineKeyboard);
             }
         };
     }
