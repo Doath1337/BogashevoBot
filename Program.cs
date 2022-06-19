@@ -12,9 +12,10 @@ class Program
 {
     private static string Token { get; set; } = "5596761923:AAGS2QcKN3TP8IGOPH5JstPMkMeBq7M0qo4";
     private static TelegramBotClient client;
-
+    
     static void Main(string[] args)
     {
+         
         client = new TelegramBotClient(Token);
         client.StartReceiving();
         client.OnMessage += OnMessageHandler;
@@ -26,7 +27,7 @@ class Program
     {
 
         var msg = e.Message;
-
+         
 
         if (msg.Text !=null)
         {

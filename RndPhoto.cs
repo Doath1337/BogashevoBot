@@ -12,7 +12,7 @@ namespace testbot2;
 
 internal static class RandomPhoto
 {
-    internal async static Task RandowyzePhoto(TelegramBotClient client, object sender, MessageEventArgs e, IReplyMarkup inlineKeyboard)
+    internal async static Task RandowyzePhoto(TelegramBotClient client, object sender, MessageEventArgs e, IReplyMarkup  inlineKeyboardRndPhotos)
     {
 
         var msg = e.Message;
@@ -27,7 +27,7 @@ internal static class RandomPhoto
                     Message msg2 = await client.SendPhotoAsync(msg.Chat.Id, photoToBeSent);
 
                 }
-                client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup:inlineKeyboard);
+                client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup: inlineKeyboardRndPhotos);
             }
             else if (ev.CallbackQuery.Data == "School")
             {
@@ -37,7 +37,7 @@ internal static class RandomPhoto
                     Message msg2 = await client.SendPhotoAsync(msg.Chat.Id, photoToBeSent);
 
                 }
-                client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup: inlineKeyboard);
+                client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup:  inlineKeyboardRndPhotos);
             }
             else if (ev.CallbackQuery.Data == "RailwayStation")
             {
@@ -47,7 +47,7 @@ internal static class RandomPhoto
                     Message msg2 = await client.SendPhotoAsync(msg.Chat.Id, photoToBeSent);
 
                 }
-                client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup: inlineKeyboard);
+                client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup:  inlineKeyboardRndPhotos);
             }
         };
     }

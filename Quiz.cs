@@ -10,13 +10,14 @@ using Telegram.Bot.Types.InputFiles;
 using Telegram.Bot.Types.ReplyMarkups;
 
 namespace testbot2;
+ 
 
 internal static class Quiz
 {
     
     public async static Task HandleQuizMessage(TelegramBotClient client, object sender, MessageEventArgs e)
     {
-        var inlineKeyboard = new InlineKeyboardMarkup(new[]
+        var inlineKeyboardRndPhotos = new InlineKeyboardMarkup(new[]
            {
                 InlineKeyboardButton.WithCallbackData("Церковь", "Church"),
                 InlineKeyboardButton.WithCallbackData("Школа", "School"),
@@ -39,16 +40,16 @@ internal static class Quiz
                     replyMarkup: Button.GetButtons());
                 break;
             case "Достопримечательности":
-                client.SendTextMessageAsync(msg.Chat.Id, "Выберите Достопримечательность: ", replyMarkup:inlineKeyboard);
-                await RandomPhoto.RandowyzePhoto(client, sender, e, inlineKeyboard);
+                client.SendTextMessageAsync(msg.Chat.Id, "Выберите Достопримечательность: ", replyMarkup:inlineKeyboardRndPhotos);
+                await RandomPhoto.RandowyzePhoto(client, sender, e, inlineKeyboardRndPhotos);
                 
                 break;
             case "Теоретический тест":
                 await Test.TeoreticalTest(client, sender, e);
                 break;
             case "Интересные факты":
-             
                 await Facts.intrestingFacts(client, sender, e);
+
                 break;
             default:
                 await client.SendTextMessageAsync(msg.Chat.Id, "Выберите команду: ", replyMarkup: Button.GetButtons());
