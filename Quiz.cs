@@ -17,12 +17,18 @@ internal static class Quiz
     
     public async static Task HandleQuizMessage(TelegramBotClient client, object sender, MessageEventArgs e)
     {
-        var inlineKeyboardRndPhotos = new InlineKeyboardMarkup(new[]
+        var inlineKeyboardRndPhotos = new InlineKeyboardMarkup(new[] {
+            new[]
            {
                 InlineKeyboardButton.WithCallbackData("Церковь", "Church"),
                 InlineKeyboardButton.WithCallbackData("Школа", "School"),
                  InlineKeyboardButton.WithCallbackData("Станция", "RailwayStation")
 
+            },
+            new[]
+            {
+                 InlineKeyboardButton.WithCallbackData("Памятник", "Monument")
+            }
             });
 
         var msg = e.Message;

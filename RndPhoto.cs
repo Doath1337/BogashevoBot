@@ -49,6 +49,16 @@ internal static class RandomPhoto
                 }
                 client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup:  inlineKeyboardRndPhotos);
             }
+            else if (ev.CallbackQuery.Data == "Monument")
+            {
+                using (FileStream fs = new FileStream(@"C:\Users\Dead Ghoul\source\repos\testbot2\testbot2\WOW.jpg", FileMode.Open))
+                {
+                    InputOnlineFile photoToBeSent = new InputOnlineFile(fs);
+                    Message msg2 = await client.SendPhotoAsync(msg.Chat.Id, photoToBeSent);
+
+                }
+                client.SendTextMessageAsync(msg.Chat.Id, "Достопримечательности", replyMarkup: inlineKeyboardRndPhotos);
+            }
         };
     }
 }
