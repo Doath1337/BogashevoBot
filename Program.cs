@@ -27,7 +27,7 @@ class Program
     {
 
         var msg = e.Message;
-         
+        DataBase db = new DataBase();
 
         if (msg.Text !=null)
         {
@@ -37,7 +37,7 @@ class Program
                 case "Авторизация":
                     // здесь будет авторизация
                 default:
-                    await Quiz.HandleQuizMessage(client, sender, e);
+                    await Quiz.HandleQuizMessage(client, sender, e,db);
                     break;
             }
         }

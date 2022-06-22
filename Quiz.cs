@@ -8,14 +8,14 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.InputFiles;
 using Telegram.Bot.Types.ReplyMarkups;
-
+using System.Data.SqlClient;
 namespace testbot2;
  
 
 internal static class Quiz
 {
     
-    public async static Task HandleQuizMessage(TelegramBotClient client, object sender, MessageEventArgs e)
+    public async static Task HandleQuizMessage(TelegramBotClient client, object sender, MessageEventArgs e,DataBase db)
     {
         var inlineKeyboardRndPhotos = new InlineKeyboardMarkup(new[] {
             new[]
@@ -51,7 +51,8 @@ internal static class Quiz
                 
                 break;
             case "Теоретический тест":
-                await Test.TeoreticalTest(client, sender, e);
+                await Test.TeoreticalTest(client, sender, e,db);
+                
                 break;
             case "Интересные факты":
                 await Facts.intrestingFacts(client, sender, e);
