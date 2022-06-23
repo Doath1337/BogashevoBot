@@ -36,9 +36,7 @@ internal class Facts
 А средний возраст населения — 40 лет.");
                 break;
 
-            case 2:
-                 
-                break;
+           
         }
         
     }
