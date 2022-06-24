@@ -11,14 +11,19 @@ internal static class Button
 {
     internal static IReplyMarkup GetButtons()
     {
-        return new ReplyKeyboardMarkup
+        ReplyKeyboardMarkup Keyboard = new(new[]
+           {
+            new KeyboardButton[] { "История Села", "Достопримечательности" },
+            new KeyboardButton[] { "Интересные факты", "Теоретический тест" }
+
+        })
         {
-            Keyboard = new List<List<KeyboardButton>>
-            {
-                new List<KeyboardButton>{ new KeyboardButton { Text = "История Села"}, new KeyboardButton { Text = "Достопримечательности" } },
-                new List<KeyboardButton>{ new KeyboardButton { Text = "Интересные факты" }, new KeyboardButton { Text = "Теоретический тест"} }
-            }
+            ResizeKeyboard = true
         };
+
+        return Keyboard;
+        
+        
     }
    
         

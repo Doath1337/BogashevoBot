@@ -15,7 +15,7 @@ namespace testbot2;
 internal static class Quiz
 {
     
-    public async static Task HandleQuizMessage(TelegramBotClient client, object sender, MessageEventArgs e,DataBase db)
+    public async static Task HandleQuizMessage(TelegramBotClient client, object sender, MessageEventArgs e)
     {
         var inlineKeyboardRndPhotos = new InlineKeyboardMarkup(new[] {
             new[]
@@ -51,7 +51,8 @@ internal static class Quiz
                 
                 break;
             case "Теоретический тест":
-                await Test.TeoreticalTest(client, sender, e,db);
+                int cnt = 0;
+                 Test.frst(client, sender, e,cnt);
                 
                 break;
             case "Интересные факты":

@@ -10,7 +10,7 @@ namespace testbot2;
 
 class Program
 {
-    private static string Token { get; set; } = "5596761923:AAGS2QcKN3TP8IGOPH5JstPMkMeBq7M0qo4";
+    private static string Token { get; set; } = "KEY";
     private static TelegramBotClient client;
     
     static void Main(string[] args)
@@ -27,7 +27,7 @@ class Program
     {
 
         var msg = e.Message;
-        DataBase db = new DataBase();
+  
 
         if (msg.Text !=null)
         {
@@ -37,7 +37,7 @@ class Program
                 case "Авторизация":
                     // здесь будет авторизация
                 default:
-                    await Quiz.HandleQuizMessage(client, sender, e,db);
+                    await Quiz.HandleQuizMessage(client, sender, e);
                     break;
             }
         }
